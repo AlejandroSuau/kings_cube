@@ -315,8 +315,12 @@ class Cube:
 
         return self.find_solution(self.pieces, self.cells)
 
-    def find_solution(self, pieces, cells):
-        """ """
+    def find_solution(self, pieces: list[Piece], cells: list[Cell]):
+        """
+            Args:
+                pieces:
+                cells:
+        """
         for i, piece in enumerate(pieces):
             for j, cell in enumerate(cells):
                 try:
@@ -329,7 +333,7 @@ class Cube:
                     piece.rotation = rotation
                     placed = self.place_piece(piece, cell)
                     if placed:
-                        #self.cube_chart.draw_structure(self.structure)
+                        # self.cube_chart.draw_structure(self.structure)
 
                         pieces_copied = deepcopy(pieces)
                         pieces_copied.pop(i)
@@ -343,8 +347,8 @@ class Cube:
 
                         self.structure = structure_copied
 
-                        #self.cube_chart.clear()
-                        #self.cube_chart.draw_structure(self.structure)
+                        # self.cube_chart.clear()
+                        # self.cube_chart.draw_structure(self.structure)
 
         return False
 
