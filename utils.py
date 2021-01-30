@@ -175,7 +175,7 @@ class CubeChart:
 
         plt.pause(self.PAUSE_SECONDS)
 
-    def draw_piece_parts(self, structure, piece):
+    def draw_piece_parts(self, structure: np.array, piece: Piece):
         """ Search all piece parts from bottom and draw it.
 
             Args:
@@ -235,6 +235,7 @@ class Cube:
             rotations_from_B:
             rotations_from_C:
             rotations_all:
+            cube_chart:
     """
     DIMENSIONS = 3
 
@@ -306,7 +307,11 @@ class Cube:
                     return self.rotations_all
 
     def solve(self, randomize_pieces=False, randomize_cells=False):
-        """ """
+        """
+            Args:
+                randomize_pieces:
+                randomize_cells:
+        """
         if randomize_pieces:
             random.shuffle(self.pieces)
 
