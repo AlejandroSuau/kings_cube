@@ -120,7 +120,14 @@ class NotAvailableRotations(Exception):
 
 
 class CubeChart:
-    """ """
+    """
+        Attributes:
+            PAUSE_SECONDS: a float number with the number of seconds that will
+                stop after place a piece.
+            fig: plf figure object.
+            ax: axis element for plt object.
+
+    """
     PAUSE_SECONDS = 0.5
 
     def __init__(self):
@@ -147,7 +154,7 @@ class CubeChart:
 
             Args:
                 structure: 3-d np array of Pieces instances.
-                show_steps:
+                show_steps: a boolean which enables to show step placements.
         """
         drew_pieces_names = []
         page = 2
